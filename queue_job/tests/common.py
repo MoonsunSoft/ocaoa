@@ -414,29 +414,29 @@ def mock_with_delay():  # pylint: disable=E501
         yield delayable_cls, delayable
 
 
-# class OdooDocTestCase(doctest.DocTestCase, _TestCase, BaseCase):
-#     """
-#     We need a custom DocTestCase class in order to:
-#     - define test_tags to run as part of standard tests
-#     - output a more meaningful test name than default "DocTestCase.runTest"
-#     """
+class OdooDocTestCase(doctest.DocTestCase, _TestCase, BaseCase):
+    """
+    We need a custom DocTestCase class in order to:
+    - define test_tags to run as part of standard tests
+    - output a more meaningful test name than default "DocTestCase.runTest"
+    """
 
-#     def __init__(
-#         self, doctest, optionflags=0, setUp=None, tearDown=None, checker=None, seq=0
-#     ):
-#         super().__init__(
-#             doctest._dt_test,
-#             optionflags=optionflags,
-#             setUp=setUp,
-#             tearDown=tearDown,
-#             checker=checker,
-#         )
-#         self.test_sequence = seq
+    def __init__(
+        self, doctest, optionflags=0, setUp=None, tearDown=None, checker=None, seq=0
+    ):
+        super().__init__(
+            doctest._dt_test,
+            optionflags=optionflags,
+            setUp=setUp,
+            tearDown=tearDown,
+            checker=checker,
+        )
+        self.test_sequence = seq
 
-#     def setUp(self):
-#         """Log an extra statement which test is started."""
-#         super().setUp()
-#         logging.getLogger(__name__).info("Running tests for %s", self._dt_test.name)
+    def setUp(self):
+        """Log an extra statement which test is started."""
+        super().setUp()
+        logging.getLogger(__name__).info("Running tests for %s", self._dt_test.name)
 
 
 def load_doctests(module):
