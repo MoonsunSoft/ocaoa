@@ -1,0 +1,16 @@
+[defaults]
+repository = "ocaoa"
+organization = "moonsunsoft"
+title = "ocaoa"
+summary = "ocaoa"
+home  = "https://github.com/moonsunsoft/ocaoa"
+version = "19.0"
+tags = ["18.0", "19.0"]
+compatilbe = ["community", "enterprice"]
+license = "GPL"
+
+
+[[mirror]]
+repository = "ocaoa"
+organization = "odoonix"
+branch = "19.0"
