@@ -32,3 +32,10 @@ class CommissionLineMixin(models.AbstractModel):
             safe_eval(formula, results, mode="exec")
             return float(results["result"])
         return super()._get_commission_amount(commission, subtotal, product, quantity)
+
+
+
+
+
+
+
